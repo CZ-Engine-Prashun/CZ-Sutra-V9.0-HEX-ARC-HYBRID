@@ -1,9 +1,10 @@
-
 /* * --- CZ-ENGINE V9.0: HEX-ARC HYBRID (STARK-BMS SYNERGY) ---
  * Developed by: Punyaprashun
  * Vision: Enabling Humanity as a Multi-Planet Species through Absolute Stability.
- * * Instructions: Simply copy-paste this code into your IDE. 
- * No external libraries required for testing.
+ * --------------------------------------------------------------------------
+ * Instructions: Simply copy-paste this code into your Arduino IDE / Wokwi. 
+ * No external libraries or .h files required.
+ * --------------------------------------------------------------------------
  */
 
 #include <Arduino.h>
@@ -40,7 +41,7 @@ struct HexArc_Shield {
 };
 // [BLACKBOX LOGIC END]
 
-HexArc_Shield cz_hybrid;
+HexArc_Shield core; // We call it 'core' for easy implementation
 double stress_val = 1e12; // Starting from Tera-load for Industrial Testing
 
 void setup() {
@@ -54,15 +55,16 @@ void setup() {
 void loop() {
     // Industrial Stress Testing: Escalating to Yottabyte scale
     if (stress_val <= 1e24) { 
-        double integrity = cz_hybrid.calculate_hybrid_integrity(stress_val);
+        // Logic Processing
+        double integrity = core.calculate_hybrid_integrity(stress_val);
 
         Serial.print("\n[HYBRID PULSE]: "); Serial.println(stress_val, 0);
         
         // Check for Synergy Breach
         if (integrity < 5.0) {
             Serial.println(">>> [CRITICAL STRESS] Re-aligning Hybrid Shield...");
-            cz_hybrid.evolve_geometry();
-            integrity = cz_hybrid.calculate_hybrid_integrity(stress_val);
+            core.evolve_geometry();
+            integrity = core.calculate_hybrid_integrity(stress_val);
         }
 
         Serial.print("HYBRID-INTEGRITY: "); Serial.println(integrity, 6);
