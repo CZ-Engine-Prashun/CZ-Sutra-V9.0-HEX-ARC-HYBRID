@@ -63,3 +63,7 @@ CZ-Engine V9.0 introduces a non-linear dynamic state reduction framework designe
                          │
                          ▼
         [Calculated Deterministic Integrity]
+
+
+
+📄 **[Read Formal Technical Whitepaper (PDF)](./CZ_Engine_V9_Whitepaper_pdf.pdf)**
